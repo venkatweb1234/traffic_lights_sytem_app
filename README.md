@@ -27,10 +27,10 @@ The lights in which traffic is travelling on the same axis can be green at the s
 Bonus: At this intersection north bound traffic has a green right-turn signal, which stops the south bound traffic and allows north bound traffic to turn right. This is green at the end of north/south green light and stays green for 10 seconds. During this time north bound is green, north right-turn is green and all other lights are red. 
 
 Implementation/Outcomes:
-1.Implement a front-end and backend (you can use ‘dotnet new’ templates of your choice)
+1.Implement a front-end and backend (you can use â€˜dotnet newâ€™ templates of your choice)
 2.The backend will contain the logic and state of the running traffic lights. The front-end will be a visual representation of the traffic lights, with the data served from the backend. 
-3.There’s no need to have a perfect design on the front end, something simple and functional is fine (unless this is an area of strength you would like to show off). Noting* we will review the client side code.
-4.There’s no need to implement entity framework (or similar) to store the data in a database, a in-memory store is fine
+3.Thereâ€™s no need to have a perfect design on the front end, something simple and functional is fine (unless this is an area of strength you would like to show off). Noting* we will review the client side code.
+4.Thereâ€™s no need to implement entity framework (or similar) to store the data in a database, a in-memory store is fine
 Code needs to follow architecture & best practices for enterprise grade system
 
 ## Prerequisites <a name="prerequisites"></a>
@@ -108,16 +108,16 @@ The steps to prepare the project for production release.
 ### API Endpoints
 
 # Traffic Light App
-# First store the data in the database few records before starting the actual test the task.
-# here are the commands:
+# First store few records before starting the actual test like below.
+# Here are the commands:
 1. **insert into TrafficLights values('South','Green')**
 2. **insert into TrafficLights values('North','Yellow')**
 3. **insert into TrafficLights values('West','Red')**
 4. **insert into TrafficLights values('East','Green')**
 1.
-1. **Persist GetTrafficData to Database(Get)**
+1. **Get the TrafficLights Data below end point(Get)**
    - Endpoint: `/TrafficLight/GetTrafficData`
-   - Description: Persisting GetTrafficData to Database.
+   - Description: Get the TrafficLights Data.
    - Request Body:
      ```json
       [
@@ -146,14 +146,28 @@ The steps to prepare the project for production release.
    - Response:
      - User has been created successfully: HTTP 200 OK
      - If any error occured during persisting data 500 (Internal server error)
+   For Example:
+      {
+           "id": 1,
+           "direction": 0,
+           "color": 2
+       },
 
-- **Note-:** UserProfiles, Roles end points are for persisting data to SQL Server.Before using or testing login end point we have to persist user and role data by using mentioned end points.
-- As menioned in the task authentication and authorization database schema was implemented, we test with login end point.
+   # above object from response represents Single traffic light direction and color, here I took Enum, it has given response as number
+     color: Red = 0;
+     color: Yellow = 1;
+     color: Green = 2;
+
+     direction: South = 0;
+     direction: West = 1;
+     direction: North = 2;
+     direction: East = 3;
+
 
 
 
 #  Asynchronous Programming
-- Added async/await all controllers ((TrafficLightController) and asynchronous database operations
+- Added async/await all controllers (TrafficLightController) and asynchronous database operations
 
 # Task 4: Exception Handling
 - Implemented robust exception handling for all API endpoint. Added common errors to find try/catch/finally. Implemented required HTTP status codes for Traffic light(end points)
