@@ -203,7 +203,7 @@ The steps to prepare the project for production release.
    - No known issues at the time of handover.
 
   ### Process <a name="process"></a> 
-   1) For Fist task persist User profile and Role (Traffic Light  Controller)
+   1) Getting Traffic Lights Data (Traffic Light  Controller)
    3) For DB, used SQL Server , With DBContext, tables (TrafficLights) are created automatically once run the program
    4) For Tasks , we have to insert data manually
       insertion script is
@@ -217,10 +217,9 @@ The steps to prepare the project for production release.
    7) All logs are captured in log.txt file
   
   screen shots for each end point  are attached
-  ## Screen Shot for All End Points <a name="screenshots"></a> 
- - Please refer this path:traffic_lights_sytem_app\screenshots\All end points.png
+  ## Screen Shot for GetTraffic Data end point <a name="screenshots"></a> 
  ## How to excute endpoint in Swagger
-     ## Go to UserProfile end point click on Tryit button
+     ## Go to GetTrafficData end point click on Tryit button
      - Please refer this path:  traffic_lights_sytem_app\screenshots\Swagger_output1.png
      ## Change request body and press execute button
      - Please refer this path: traffic_lights_sytem_app\screenshots\Swagger_output2.png
