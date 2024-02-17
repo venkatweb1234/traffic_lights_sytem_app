@@ -144,8 +144,8 @@ The steps to prepare the project for production release.
     ]
      ```
    - Response:
-     - User has been created successfully: HTTP 200 OK
-     - If any error occured during persisting data 500 (Internal server error)
+     - HTTP 200 - Sucess - Response is array of Traffic lights with direction and color.
+     - If any error occured during getting Traffic lights data 500 (Internal server error)
    For Example:
       {
            "id": 1,
